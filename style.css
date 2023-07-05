@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Montserrat:wght@100;200;500;700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,37 +8,37 @@
 
 :root {
   --bg-main: hsl(30, 38%, 92%);
-  --dark-cyan: hsl(158, 36%, 37%);
   --dark-blue: hsl(212, 21%, 14%);
+  --dark-cyan: hsl(158, 36%, 37%);
   --dark-grayish-blue: hsl(228, 12%, 48%);
-  --white: #ffffff;
-  --font-montserrat: "Montserrat", sans-serif;
   --font-fraunces: "Fraunces", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --white: #ffffff;
 }
 
 body {
+  background-color: var(--bg-main);
+  font-family: var(--font-fraunces);
   height: 100vh;
   width: 100vw;
-  font-family: var(--font-fraunces);
-  background-color: var(--bg-main);
 }
 
 #container {
   background-color: var(--white);
+  border-radius: 15px;
   display: flex;
-  width: 663px;
   height: 500px;
+  left: 50%;
+  overflow: hidden;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 15px;
-  overflow: hidden;
+  width: 663px;
 }
 
-p{
-    color: var(--dark-grayish-blue);
-    font-family: var(--font-montserrat);
+p {
+  color: var(--dark-grayish-blue);
+  font-family: var(--font-montserrat);
 }
 
 #left-side img {
@@ -45,7 +46,7 @@ p{
 }
 
 #right-side {
-padding: 26px;
+  padding: 26px;
 }
 
 #right-side #perfume {
@@ -54,8 +55,8 @@ padding: 26px;
 }
 
 #title {
-  margin-right: 32px;
   margin-bottom: 20px;
+  margin-right: 32px;
 }
 
 #description {
@@ -65,20 +66,20 @@ padding: 26px;
 }
 
 #price {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 32px 0;
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  margin: 32px 0;
 }
 
 #price h1 {
-  font-weight: 700;
   color: var(--dark-cyan);
+  font-weight: 700;
 }
 
 #price p {
-  text-decoration: line-through;
   font-size: 14px;
+  text-decoration: line-through;
 }
 
 button img {
@@ -86,26 +87,67 @@ button img {
 }
 
 button {
-    background-color: var(--dark-cyan);
+  background-color: var(--dark-cyan);
+  border-radius: 12px;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+  transition: background-color 0.5s;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: rgb(0, 61, 0);
+}
+
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+  }
+
+  #left-side img {
     width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
+  }
+
+  #right-side {
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    gap: 10px;
-    font-family: var(--font-montserrat);
-    font-weight: 700;
-    color: var(--white);
-    border-radius: 12px;
-    border: none;
-    transition: background-color 0.5s;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    overflow: scroll;
+  }
+  
+  #container {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+
+    margin: 50px 0;
   }
 
-  a {
-    text-decoration: none;
+  #left-side img {
+    width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
   }
 
-  button:hover {
-    background-color: rgb(0, 61, 0);
+  #right-side {
+    padding: 20px;
   }
-
+}
